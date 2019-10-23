@@ -1,16 +1,19 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Auth from './components/Auth';
+import Game from './components/Game';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World
-        </p>
-      </header>
+    <div>
+      <Router>
+        <div className="app-container">
+          <Route exact path="/" component={Auth} />
+          <Route exact path="/game" component={Game} />
+        </div>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
