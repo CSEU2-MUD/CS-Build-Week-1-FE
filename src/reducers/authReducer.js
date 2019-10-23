@@ -9,9 +9,9 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case START:
-      return { ...initialState };
+      return { ...initialState, loading: true };
     case SUCCESS:
-      return { ...initialState, loggedIn: true };
+      return { ...initialState, loggedIn: true, loading: false };
     case FAILURE:
       return { ...initialState, loading: false, error: action.payload };
     default:
