@@ -1,0 +1,37 @@
+.sidebar-container {
+  width: 28%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.sub-container {
+  width: 100%;
+  margin-bottom: 5px;
+  height: 150px;
+  overflow-y: auto;
+}
+
+.sub-container .header {
+  background: white;
+  color: black;
+  width: 100%;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.sub-container .content {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.player-container {
+  min-height: 250px;
+}
+
+.sub-container .content p {
+  margin: 5px;
+  font-size: 1.8rem;
+}
