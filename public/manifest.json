@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MUD Game",
+  "name": "Multi-Player Dungeon Game",
   "icons": [
     {
       "src": "favicon.ico",

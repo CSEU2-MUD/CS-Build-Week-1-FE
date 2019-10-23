@@ -3,7 +3,7 @@ import AuthForm from './AuthForm';
 
 const Auth = () => {
   return (
-    <div className="auth-container">
+    <div className="container">
       <h1>MUD GAME</h1>
       <AuthForm />
     </div>

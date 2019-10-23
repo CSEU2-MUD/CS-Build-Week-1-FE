@@ -1,0 +1,16 @@
+.game-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.game-container main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.game-container main section {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+}

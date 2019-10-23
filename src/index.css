@@ -4,6 +4,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Caveat Brush', cursive, sans-serif;
+  color: white;
 }
 
 body {
@@ -18,74 +19,28 @@ body {
   display: flex;
 }
 
-.auth-container {
+.container {
   margin: auto auto;
 }
 
-.auth-container > h1 {
+.container h1 {
   font-size: 5rem;
-  color: white;
   font-family: 'Press Start 2P', cursive;
   margin-bottom: 15px;
 }
 
-.form-container {
-  margin: 0 auto;
-}
-
-.form-container > h2 {
-  margin-top: 50px;
-  font-size: 2rem;
-}
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.auth-form > h2 {
-  font-size: 3rem;
-  color: white;
-}
-
-.auth-form > input {
+.container a {
   font-size: 1.8rem;
-  border-radius: 3px;
-  margin: 5px 0;
-  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
 }
 
-.auth-form-footer {
-  text-align: center;
-}
-
-.auth-form-footer > button {
-  margin: 10px;
-  font-size: 1.8rem;
-  color: white;
-  background: none;
-  padding: 5px;
-}
-
-.auth-form-footer > button:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.auth-form-footer > button > span {
+.link {
   font-size: 1.8rem;
   color: dodgerblue;
-}
-
-.button {
-  padding: 8px;
-  font-size: 1.8rem;
   cursor: pointer;
 }
 
-.error-message {
-  margin-top: 5px;
-  text-align: center;
-  font-size: 1.8rem;
-  color: white;
+.border {
+  border: 2px solid white;
 }

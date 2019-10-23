@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { signUp, logIn } from '../actions/auth';
+import './styling/auth-form.css';
 
 const AuthForm = ({ loading, error, logIn, signUp, history }) => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -72,18 +73,22 @@ const AuthForm = ({ loading, error, logIn, signUp, history }) => {
             value={userInfo.password2}
           />
         )}
-        <button type="submit" className="button" disabled={loading}>
+        <button
+          type="submit"
+          className={`button ${loading && 'loading'}`}
+          disabled={loading}
+        >
           {isSignUp ? 'Create Account' : 'Login'}
         </button>
       </form>
       <div className="auth-form-footer">
         {isSignUp ? (
           <button onClick={() => setIsSignUp(false)}>
-            Already have an Account, <span>Login</span>
+            Already have an Account, <span className="link">Login</span>
           </button>
         ) : (
           <button onClick={() => setIsSignUp(true)}>
-            Don't have an account, <span>Create Account</span>
+            Don't have an account, <span className="link">Create Account</span>
           </button>
         )}
       </div>

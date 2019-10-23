@@ -1,7 +1,12 @@
+import axios from 'axios';
+import { API_HOST } from './consts';
+
+const KEY = 'mud-token';
+
 export const setToken = payload => {
   try {
     const token = JSON.stringify(payload);
-    localStorage.setItem('mud-token', token);
+    localStorage.setItem(KEY, token);
   } catch {
     return undefined;
   }
@@ -9,7 +14,7 @@ export const setToken = payload => {
 
 export const getToken = () => {
   try {
-    const token = localStorage.getItem('mud-token');
+    const token = localStorage.getItem(KEY);
     if (token === null) {
       return undefined;
     }
@@ -20,6 +25,16 @@ export const getToken = () => {
 };
 
 export const clearLocalStorage = () => {
-  localStorage.removeItem('mud-token');
+  localStorage.removeItem(KEY);
   window.location.href = '/';
+};
+
+export const axiosWithAuth = () => {
+  const token = getToken();
+  return axios.create({
+    headers: {
+      Authorization: `Token ${token.key}`,
+    },
+    baseURL: API_HOST,
+  });
 };
