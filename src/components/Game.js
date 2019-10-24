@@ -4,16 +4,17 @@ import Header from './Header';
 import Map from './Map';
 import Buttons from './Buttons';
 import Sidebar from './Sidebar';
-import './styling/game.css';
-import { initialize } from '../actions/game';
+import { initialize, getRooms } from '../actions/game';
+import { GameContainer } from './styling/game.style';
 
 const Game = props => {
   useEffect(() => {
     props.initialize();
+    props.getRooms();
   });
 
   return (
-    <div className="game-container">
+    <GameContainer>
       <Header />
       <main>
         <section>
@@ -22,11 +23,11 @@ const Game = props => {
         </section>
         <Sidebar />
       </main>
-    </div>
+    </GameContainer>
   );
 };
 
 export default connect(
   null,
-  { initialize }
+  { initialize, getRooms }
 )(Game);
