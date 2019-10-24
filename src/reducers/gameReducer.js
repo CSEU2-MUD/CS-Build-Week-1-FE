@@ -1,10 +1,11 @@
-import { INITIALIZE, MOVE, START_COMMAND } from '../actions/game';
+import { INITIALIZE, MOVE, START_COMMAND, GET_ROOMS } from '../actions/game';
 
 const initialState = {
   loading: false,
   player: null,
   currentRoom: {},
   players: [],
+  rooms: [],
   error: '',
 };
 
@@ -33,6 +34,11 @@ const gameReducer = (state = initialState, action) => {
         },
         players: action.payload.players,
         error: action.payload.error_msg,
+      };
+    case GET_ROOMS:
+      return {
+        ...state,
+        rooms: action.payload.rooms,
       };
     default:
       return state;

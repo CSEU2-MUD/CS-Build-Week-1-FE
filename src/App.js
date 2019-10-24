@@ -4,18 +4,20 @@ import Auth from './components/Auth';
 import Game from './components/Game';
 import { Protected, AuthRoute } from './components/Protected';
 import NotFound from './components/NotFound';
+import { AppContainer, GlobalStyle } from './app.style';
 
 const App = () => {
   return (
     <div>
+      <GlobalStyle />
       <Router>
-        <div className="app-container">
+        <AppContainer>
           <Switch>
             <AuthRoute exact path="/" component={Auth} />
             <Protected exact path="/game" component={Game} />
             <Route component={NotFound} />
           </Switch>
-        </div>
+        </AppContainer>
       </Router>
     </div>
   );
