@@ -23,7 +23,6 @@ export const Matrix = styled.div`
   flex-wrap: wrap;
   width: 700px;
   height: 760px;
-  
   margin: 0 auto;
   justify-content: space-between;
 `

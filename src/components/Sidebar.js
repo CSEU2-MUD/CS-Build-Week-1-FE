@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Buttons from './Buttons';
+import Header from './Header';
 import {
   SidebarContainer,
   Content,
-  SubContainer,
+  SubContainer
 } from './styling/sidebar.style';
 
 const Description = ({ player, currentRoom }) => {
@@ -45,6 +47,8 @@ const Players = ({ players }) => {
 const Sidebar = ({ players, player, currentRoom }) => {
   return (
     <SidebarContainer>
+      <Header />
+      <Buttons />
       <Description player={player} currentRoom={currentRoom} />
       <Players players={players} />
     </SidebarContainer>
@@ -55,7 +59,7 @@ const mapStateToProps = ({ gameReducer }) => {
   return {
     players: gameReducer.players,
     player: gameReducer.player,
-    currentRoom: gameReducer.currentRoom,
+    currentRoom: gameReducer.currentRoom
   };
 };
 

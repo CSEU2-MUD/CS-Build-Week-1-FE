@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import Header from './Header';
-import Map from './Map';
-import Buttons from './Buttons';
-import Sidebar from './Sidebar';
-import { initialize, getRooms } from '../actions/game';
-import { GameContainer } from './styling/game.style';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import Map from "./Map";
+import Sidebar from "./Sidebar";
+import { initialize, getRooms } from "../actions/game";
+import { GameContainer } from "./styling/game.style";
 
 const Game = props => {
   useEffect(() => {
@@ -15,12 +13,8 @@ const Game = props => {
 
   return (
     <GameContainer>
-      <Header />
       <main>
-        <section>
-          <Map />
-          <Buttons />
-        </section>
+        <Map />
         <Sidebar />
       </main>
     </GameContainer>
