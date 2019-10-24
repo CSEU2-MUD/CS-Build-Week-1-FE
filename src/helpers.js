@@ -40,10 +40,10 @@ export const axiosWithAuth = () => {
 };
 
 export const generateMatrix = () => {
-  var matrix = [];
-  for (var y = 0; y < 25; y++) {
+  const matrix = [];
+  for (let y = 0; y < 25; y++) {
     matrix[y] = [];
-    for (var x = 0; x < 25; x++) {
+    for (let x = 0; x < 25; x++) {
       matrix[y][x] = {
         "id": null,
         "title": null,
