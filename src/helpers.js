@@ -38,3 +38,24 @@ export const axiosWithAuth = () => {
     baseURL: API_HOST,
   });
 };
+
+export const generateMatrix = () => {
+  const matrix = [];
+  for (let y = 0; y < 25; y++) {
+    matrix[y] = [];
+    for (let x = 0; x < 25; x++) {
+      matrix[y][x] = {
+        "id": null,
+        "title": null,
+        "description": null,
+        "n_to": null,
+        "s_to": null,
+        "e_to": null,
+        "w_to": null,
+        "x": x,
+        "y": y
+      };
+    }
+  }
+  return matrix
+}
