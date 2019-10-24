@@ -1,13 +1,13 @@
 import React from 'react';
-import './styling/header.css';
 import { clearLocalStorage } from '../helpers';
+import { HeaderContainer } from './styling/header.style';
 
 const Header = () => {
   return (
-    <header>
+    <HeaderContainer>
       <h1>MUD-GAME</h1>
       <div onClick={() => clearLocalStorage()}>Logout</div>
-    </header>
+    </HeaderContainer>
   );
 };
 

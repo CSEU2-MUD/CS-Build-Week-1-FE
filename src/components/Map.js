@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './styling/map.css';
+import { DisplayMessage, MapContainer } from './styling/map.style';
 
 const Map = ({ error }) => {
   return (
-    <div className="map-container border">
-      {error && <p className="display-message">{error}</p>}
-    </div>
+    <MapContainer>
+      {error && <DisplayMessage>{error}</DisplayMessage>}
+    </MapContainer>
   );
 };
 

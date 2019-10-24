@@ -1,13 +1,13 @@
 import React from 'react';
-import './styling/buttons.css';
 import { connect } from 'react-redux';
 import { move } from '../actions/game';
+import { ButtonsContainer, DirectionButton } from './styling/buttons.style';
 
 const Button = ({ name, fn, loading }) => {
   return (
-    <button className="way-button" name={name} onClick={fn} disabled={loading}>
+    <DirectionButton name={name} onClick={fn} disabled={loading}>
       {name}
-    </button>
+    </DirectionButton>
   );
 };
 
@@ -18,12 +18,12 @@ const Buttons = props => {
   };
 
   return (
-    <div className={`buttons-container border ${props.loading && 'loading'}`}>
+    <ButtonsContainer className={`${props.loading && 'loading'}`}>
       <Button name="North" fn={move} loading={props.loading} />
       <Button name="South" fn={move} loading={props.loading} />
       <Button name="East" fn={move} loading={props.loading} />
       <Button name="West" fn={move} loading={props.loading} />
-    </div>
+    </ButtonsContainer>
   );
 };
 

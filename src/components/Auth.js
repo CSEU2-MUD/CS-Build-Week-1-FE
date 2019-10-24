@@ -1,12 +1,13 @@
 import React from 'react';
 import AuthForm from './AuthForm';
+import { Container } from '../app.style';
 
 const Auth = () => {
   return (
-    <div className="container">
+    <Container>
       <h1>MUD GAME</h1>
       <AuthForm />
-    </div>
+    </Container>
   );
 };
 

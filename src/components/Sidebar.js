@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './styling/sidebar.css';
+import {
+  SidebarContainer,
+  Content,
+  SubContainer,
+} from './styling/sidebar.style';
 
 const Description = ({ player, currentRoom }) => {
   return (
-    <div className="sub-container border">
-      <h2 className="header">Room Description</h2>
-      <div className="content">
+    <SubContainer>
+      <h2>Room Description</h2>
+      <Content>
         {player ? (
           <p>
             Hello, {player} <br />
@@ -16,16 +20,16 @@ const Description = ({ player, currentRoom }) => {
         ) : (
           <p>Welcome to MUD Game</p>
         )}
-      </div>
-    </div>
+      </Content>
+    </SubContainer>
   );
 };
 
 const Players = ({ players }) => {
   return (
-    <div className="sub-container player-container border">
-      <h2 className="header">Players in Current Room</h2>
-      <div className="content">
+    <SubContainer>
+      <h2>Players in Current Room</h2>
+      <Content>
         {players.length > 0 ? (
           players.map((player, index) => (
             <p key={`${player}-${index}`}>{player}</p>
@@ -33,17 +37,17 @@ const Players = ({ players }) => {
         ) : (
           <p>There is no Player in Current Room</p>
         )}
-      </div>
-    </div>
+      </Content>
+    </SubContainer>
   );
 };
 
 const Sidebar = ({ players, player, currentRoom }) => {
   return (
-    <div className="sidebar-container border">
+    <SidebarContainer>
       <Description player={player} currentRoom={currentRoom} />
       <Players players={players} />
-    </div>
+    </SidebarContainer>
   );
 };
 
