@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
-  width: 28%;
-  height: 90vh;
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 5px;
   border: 2px solid white;
+  margin-left: 10px;
 `;
 
 export const SubContainer = styled.div`
   width: 100%;
   margin-bottom: 5px;
-  height: 150px;
   overflow-y: auto;
   border: 2px solid white;
-  min-height: 250px;
+  min-height: 150px;
   padding-bottom: 5px;
 
   & > h2 {

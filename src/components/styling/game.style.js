@@ -6,13 +6,5 @@ export const GameContainer = styled.div`
 
   main {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    section {
-      display: flex;
-      width: 70%;
-      flex-direction: column;
-    }
   }
 `;

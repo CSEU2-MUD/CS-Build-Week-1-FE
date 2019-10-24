@@ -4,19 +4,18 @@ export const ButtonsContainer = styled.div`
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border: 2px solid white;
 `;
 
 export const DirectionButton = styled.button`
-  margin: 10px 20px;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   cursor: pointer;
   color: black;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   background: white;
   border: none;
 
