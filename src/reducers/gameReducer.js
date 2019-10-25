@@ -2,7 +2,7 @@ import { INITIALIZE, MOVE, START_COMMAND, GET_ROOMS } from '../actions/game';
 
 const initialState = {
   loading: false,
-  player: null,
+  player: { uuid: '', name: '' },
   currentRoom: {},
   players: [],
   rooms: [],
@@ -16,7 +16,10 @@ const gameReducer = (state = initialState, action) => {
     case INITIALIZE:
       return {
         loading: false,
-        player: action.payload.name,
+        player: {
+          uuid: action.payload.uuid,
+          name: action.payload.name,
+        },
         currentRoom: {
           title: action.payload.title,
           description: action.payload.description,
