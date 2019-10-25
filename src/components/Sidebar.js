@@ -5,8 +5,9 @@ import Header from './Header';
 import {
   SidebarContainer,
   Content,
-  SubContainer
+  SubContainer,
 } from './styling/sidebar.style';
+import Chat from './Chat';
 
 const Description = ({ player, currentRoom }) => {
   return (
@@ -51,6 +52,7 @@ const Sidebar = ({ players, player, currentRoom }) => {
       <Buttons />
       <Description player={player} currentRoom={currentRoom} />
       <Players players={players} />
+      <Chat />
     </SidebarContainer>
   );
 };
@@ -58,8 +60,8 @@ const Sidebar = ({ players, player, currentRoom }) => {
 const mapStateToProps = ({ gameReducer }) => {
   return {
     players: gameReducer.players,
-    player: gameReducer.player,
-    currentRoom: gameReducer.currentRoom
+    player: gameReducer.player.name,
+    currentRoom: gameReducer.currentRoom,
   };
 };
 
