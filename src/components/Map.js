@@ -12,12 +12,11 @@ const Map = ({ error, rooms }) => {
     }
     if (matrix.length && rooms && !matrix[0][0].id) {
       const mat = JSON.parse(JSON.stringify(matrix));
-      rooms.map(room => {
-        mat[24 - room.y][room.x] = room;
-      });
+      rooms.map(room => (mat[24 - room.y][room.x] = room));
       setMatrix(mat);
     }
-  }, [matrix, rooms]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rooms]);
 
   return (
     <MapContainer>
@@ -38,7 +37,7 @@ const Map = ({ error, rooms }) => {
 const mapStateToProps = ({ gameReducer }) => {
   return {
     error: gameReducer.error,
-    rooms: gameReducer.rooms
+    rooms: gameReducer.rooms,
   };
 };
 

@@ -11,6 +11,9 @@ export const MOVE_FAILURE = 'MOVE_FAILURE';
 export const GET_ROOMS = 'GET_ROOMS';
 export const GET_ROOMS_FAILURE = 'GET_ROOMS_FAILURE';
 
+export const SAY_SOMETHING = 'SAY_SOMETHING';
+export const SAY_SOMETHING_FAILURE = 'SAY_SOMETHING_FAILURE';
+
 export const initialize = () => dispatch => {
   dispatch({ type: START_COMMAND });
   return axiosWithAuth()
@@ -45,6 +48,19 @@ export const getRooms = () => dispatch => {
       dispatch({
         type: GET_ROOMS_FAILURE,
         payload: 'error loading game rooms',
+      });
+    });
+};
+
+export const say = message => dispatch => {
+  return axiosWithAuth()
+    .post('/api/adv/say/', { message })
+    .then(res => {
+      dispatch({ type: SAY_SOMETHING });
+    })
+    .catch(err => {
+      dispatch({
+        type: SAY_SOMETHING_FAILURE,
       });
     });
 };
